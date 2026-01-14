@@ -1,7 +1,20 @@
+<?php
+$lang = $_GET['lang'] ?? $_SESSION['lang'] ?? 'et';
+$allowed = ['et', 'ru'];
+
+if (!in_array($lang, $allowed)) {
+    $lang = 'et';
+}
+
+$_SESSION['lang'] = $lang;
+
+$t = require __DIR__ . "/lang/$lang.php";
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
-        <title> MyShop</title>
+        <title>MyShop</title>
             <link rel="stylesheet" 
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
             integrity ="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -16,16 +29,22 @@
     <body>
         <nav class="one">
             <ul class="topmenu">
-                <li><a href="#">Kategooriad<i class="fa fa-angle-down"></i></a>
+                <li><a href="#"><?= $t['categories'] ?><i class="fa fa-angle-down"></i></a>
                     <ul class="submenu">
                         <?php
                             Controller::AllCategory();
                         ?>
                     </ul>
                 </li>
-                <li><a href="testError">Info</a></li>
-                <li><a href="./">Stardileht</a></li>
-                <li><a href="registerForm">Register</a></li>
+                <li><a href="testError"><?= $t['info'] ?></a></li>
+                <li><a href="./"><?= $t['home'] ?></a></li>
+                <li><a href="registerForm"><?= $t['register'] ?></a></li>
+                <li style="margin-left:30%; width:5%;">
+                    <a href="?lang=et">ET</a> 
+                </li>
+                <li style="margin-left:0%; width:5%;">
+                    <a href="?lang=ru">RU</a>
+                </li>
             </ul>
         </nav>
         <section>
