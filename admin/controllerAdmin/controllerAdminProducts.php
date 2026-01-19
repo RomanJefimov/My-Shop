@@ -35,7 +35,7 @@ class controllerAdminProducts {
         include_once('viewAdmin/productsDeleteForm.php');
     }
 
-    public static function nproductsDeleteResult($id) {
+    public static function productsDelResult($id) {
         $test = modelAdminProducts::getProductsDelete($id);
         include_once('viewAdmin/productsDeleteForm.php');
     }

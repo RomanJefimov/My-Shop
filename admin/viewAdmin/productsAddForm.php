@@ -46,6 +46,10 @@ else{
                 </select>
                 </td>
             </tr>
+            <tr>
+                <td>Price</td>
+                <td><textarea rows="1" name="price" class='form-control' required ></textarea></td>
+            </tr>
             <!-- image--> 
              <tr>
                 <td>Pictrue</td>

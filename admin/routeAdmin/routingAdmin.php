@@ -39,7 +39,7 @@ elseif($path=='productsDel' && isset($_GET['id'])) {
     $response=controllerAdminProducts::productsDeleteForm($_GET['id']);
 }
 elseif($path == 'productsDelResult' && isset($_GET['id'])) {
-    $response = controllerAdminProducts::productsDeleteResult($_GET['id']);
+    $response = controllerAdminProducts::productsDelResult($_GET['id']);
 }
 else {
     //Страница не существует

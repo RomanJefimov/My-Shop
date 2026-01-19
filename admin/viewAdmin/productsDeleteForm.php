@@ -52,6 +52,11 @@
                     </select>
                 </td>
             </tr>
+            <tr>
+                <td>Price</td>
+                <td><textarea rows="1" name="price" class='form-control' required ><?php echo
+                $detail['price']; ?></textarea></td>
+            </tr>
             <!-- image--> 
              <tr>
                 <td>OldPicture</td>

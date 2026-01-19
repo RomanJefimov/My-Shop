@@ -22,6 +22,8 @@ ob_start();
                 echo '<td>'.$row['id'].'</td>';
                 echo '<td><b>Title:</b> '.$row['title'].'<br>';
                 echo '<b>Категория: </b><i>'.$row['name'].'</i>';
+                echo '<br>';
+                echo '<b>Цена: </b><i>'.$row['price'].'</i>';
                 echo '<br><b>Author: </b><i>'.$row['username'].'</i>';
                 echo '</td>';
                 echo '<td>

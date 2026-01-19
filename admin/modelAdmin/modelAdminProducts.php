@@ -10,20 +10,21 @@ class modelAdminProducts{
     }
 
     //-----------------Add
-    public static function getProductsAdd() {
+    public static function getProductAdd() {
         $test=false;
         if(isset($_POST['save'])) {
-            if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory']) ) {
+            if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory']) && isset($_POST['price']) ) {
 
                 $title=$_POST['title'];
                 $text=$_POST['text'];
                 $idCategory=$_POST['idCategory'];
+                $price=$_POST['price'];
 
                 //--------------images type blob
                     $image = addslashes (file_get_contents($_FILES['picture']['tmp_name']));
                 //-----------------------------------------
-                $sql="INSERT INTO `products` (`id`, `title`, `text`, `picture`, `category_id`, `user_id`) 
-                VALUES (NULL, '$title', '$text', '$image', '$idCategory', '1')";
+                $sql="INSERT INTO `products` (`id`, `title`, `text`, `price`, `picture`, `category_id`) 
+                VALUES (NULL, '$title', '$text', '$price', '$image', '$idCategory')";
                         $db = new Database();
                         $item = $db->executeRun($sql);
                     if($item==true) {
@@ -45,10 +46,11 @@ class modelAdminProducts{
     public static function getProductsEdit($id) {
         $test=false;
         if(isset($_POST['save'])) {
-            if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory'])) {
+            if(isset($_POST['title']) && isset($_POST['text']) && isset($_POST['idCategory']) && isset($_POST['price'])) {
                 $title=$_POST['title'];
                 $text=$_POST['text'];
                 $idCategory=$_POST['idCategory'];
+                $price=$_POST['price'];
             //----------------------images type blob
             $image=$_FILES['picture']['name'];
             if($image!="") {
@@ -60,11 +62,11 @@ class modelAdminProducts{
             }
             //-----------------------
             if($image=="") {
-                $sql="UPDATE `products` SET `title` = '$title', `text` = '$text',
-                `category_id` = '$idCategory' WHERE `productws`.`id` = ".$id;
+                $sql="UPDATE `products` SET `title` = '$title', `text` = '$text', `price` = '$price',
+                `category_id` = '$idCategory' WHERE `products`.`id` = ".$id;
             }
             else{
-                $sql="UPDATE `products` SET `title` = '$title', `text` = '$text', `picture`='
+                $sql="UPDATE `products` SET `title` = '$title', `text` = '$text', `price` = '$price', `picture`='
                 $image', `category_id` = '$idCategory' WHERE `products`.`id` = ".$id;
             }
             $db = new Database();
