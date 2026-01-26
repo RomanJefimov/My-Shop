@@ -34,9 +34,20 @@ class ViewProducts{
         echo '<div class="info">';
         echo "<h2>".$n['title']."</h2>";
         Controller::CommentsCountWithAncor($n['id']);
-        echo '<br><img src="data:image/jpeg;base64,'.base64_encode( $n['picture'] ).'" width=150/><br>';
+        echo '<br>
+        <img src="data:image/jpeg;base64,'.base64_encode($n['picture']).'" 
+        style="
+            width: 500px; 
+            height: auto; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+            border: 1px solid #ccc; 
+            display: block; 
+            margin: 20px auto;
+        "/>
+        <br>';
 
-        echo "<p>".$n['text']."</p>";
+        echo '<p style="width:70%; margin-left: 15%;">'.$n['text'].'</p>';
         echo '</div>';
     }
 // добавить методы для других видов представлений новостей
