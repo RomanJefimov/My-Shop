@@ -1,7 +1,8 @@
 <?php
+global $t;
 ob_start();
 ?>
-<h1 style="margin-right:60%;">TOP 3 PRODUCTS</h1>
+<h1 style="margin-right:60%;"><?= $t['top_products'] ?></h1>
 <br>
 <?php
 ViewProducts::ProductsByCategory($arr);

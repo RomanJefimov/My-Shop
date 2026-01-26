@@ -8,5 +8,8 @@ return [
     'send'         => 'Saada',
     'comment'      => 'Kommentaar',
     'date'         => 'Kuupäev',
+    'top_products' => 'TOP 3 TOODET',
+    'all_products' => 'Kõik uudised',
+    'cat_products' => 'Uudised (kategorii)',
 ];
 ?>

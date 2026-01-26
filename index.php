@@ -1,5 +1,8 @@
 <?php
 session_start();
+require_once 'core/lang.php';
+
+
 include_once 'inc/Database.php';
 require 'model/Category.php';
 require 'model/Products.php';

@@ -1,7 +1,8 @@
 <?php
+global $t;
 ob_start();
 ?>
-<h1 style="margin-right:80%;">Koik uudised</h1>
+<h1 style="margin-right:80%;"><?= $t['all_products'] ?></h1>
 <br>
 
 <?php
