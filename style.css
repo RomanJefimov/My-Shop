@@ -100,7 +100,7 @@ a {
   text-align: center;
 }
 .one ul {
-  background: #3c01ff;
+  background: #627bcd;
 }
 .one ul a {
   color: white;
@@ -115,7 +115,7 @@ a {
 }
 .one .submenu {
   display: none;
-  background: #3c01ff;
+  background: #627bcd;
 }
 .one ul li:hover .submenu {
   display: block;
