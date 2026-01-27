@@ -12,5 +12,7 @@ return [
     'all_products' => 'Kõik uudised',
     'cat_products' => 'Uudised (kategorii)',
     'your_comment' => 'Teie komentaar',
+    'commit' => 'Saada',
+    'comment' => 'Kommentaar',
 ];
 ?>

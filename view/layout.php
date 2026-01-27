@@ -1,16 +1,4 @@
-<?php
-$lang = $_GET['lang'] ?? $_SESSION['lang'] ?? 'et';
-$allowed = ['et', 'ru'];
-
-if (!in_array($lang, $allowed)) {
-    $lang = 'et';
-}
-
-$_SESSION['lang'] = $lang;
-
-$t = require __DIR__ . "/lang/$lang.php";
-?>
-
+<?php global $t; ?>
 <!DOCTYPE html>
 <html>
     <head>

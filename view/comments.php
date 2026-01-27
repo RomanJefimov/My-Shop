@@ -11,8 +11,9 @@ class ViewComments{
     }
 
     public static function CommentsByProducts($arr) {
+        global $t;
         if($arr!=null) {
-            echo '<table id="table" ><th>Kommentaar</th><th>Kuupaev</th>';
+            echo '<table id="table" ><th>' .$t['comment']. '</th><th>' .$t['date']. '</th>';
             foreach($arr as $value) {
                 echo '<tr><td>'.$value['text']."</td><td>".$value['date']."</td></tr>";
             }
